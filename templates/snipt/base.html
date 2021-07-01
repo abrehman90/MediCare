@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MediCare</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static '' %}css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static '' %}css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static '' %}css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static '' %}css/superfish.css">
+    <!-- Style -->
+	<link rel="stylesheet" href="{% static '' %}css/style.css">
+	<!-- Modernizr JS -->
+	<script src="{% static '' %}js/modernizr-2.6.2.min.js"></script>
+        {% block css %}
+        {% endblock css %}
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 text-left fh5co-link">
+						<a href="https://wa.me/923060493989/?text=Hi Dear,">For Other Info <i class="icon-phone3"></i> +923 0604 93989</a>
+					</div>
+					<div class="col-md-6 col-sm-6 text-right fh5co-social">
+                        <a target="_blank" class="grow" href="https://techsol.herokuapp.com/"><i class="icon-globe2"></i></a>
+                        <a target="_blank" class="grow" href="https://www.facebook.com/hassal.ali.56"><i class="icon-facebook2"></i></a>
+                        <a target="_blank" class="grow" href="https://www.linkedin.com/in/abdul-rehman-171076188/"><i class="icon-linkedin22"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="{% url 'index' %}">MediCare</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active">
+								<a href="{% url 'index' %}">Home</a>
+							</li>
+							<li><a href="{% url 'about' %}">About</a></li>
+							<li><a href="{% url 'blog' %}">Blog</a></li>
+							<li><a href="{% url 'contact' %}">Contact</a></li>
+							<li><a href="{% url 'card' %}">Donation</a></li>
+							<li><a href="{% url 'form' %}">Buy</a></li>
+                            {% if user.is_authenticated %}
+                                <li>
+								<a class="fh5co-sub-ddown">{{ user.username }}</a>
+								 <ul class="fh5co-sub-menu">
+								 	<li><a>Profile</a></li>
+								 	<li><a href="{% url 'logout' %}">Logout</a></li>
+								</ul>
+							</li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}">Login/SignUp</a></li>
+                            {% endif %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+
+        {% block content %}
+
+        {% endblock content %}
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p class="fh5co-social-icons">
+								<a target="_blank" href="https://techsol.herokuapp.com/"><i class="icon-globe2"></i></a>
+								<a target="_blank" href="https://wa.me/923060493989/?text=Hi Dear,"><i class="icon-whatsapp"></i></a>
+								<a target="_blank" href="https://www.facebook.com/hassal.ali.56"><i class="icon-facebook2"></i></a>
+								<a target="_blank" href="https://www.linkedin.com/in/abdul-rehman-171076188/"><i class="icon-linkedin-with-circle"></i></a>
+								<a target="_blank" href="https://github.com/abrehman90"><i class="icon-github"></i></a>
+							</p>
+							<p>Copyright <a href="https://techsol.herokuapp.com/">TechSol</a>. All Rights Reserved. <br>Made by <a href="https://techsol.herokuapp.com/" target="_blank">TechSol.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="{% static '' %}js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static '' %}js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="{% static '' %}js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="{% static '' %}js/jquery.waypoints.min.js"></script>
+	<script src="{% static '' %}js/sticky.js"></script>
+
+	<!-- Stellar -->
+	<script src="{% static '' %}js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="{% static '' %}js/hoverIntent.js"></script>
+	<script src="{% static '' %}js/superfish.js"></script>
+	
+	<!-- Main JS -->
+	<script src="{% static '' %}js/main.js"></script>
+    {% block js %}
+    {% endblock js %}
+
+	</body>
+</html>
+

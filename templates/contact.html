@@ -1,0 +1,65 @@
+{% extends 'snipt/base.html' %}
+{% load static %}
+{% block content %}
+
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url({% static '' %}images/co.jpg);">
+				<div class="desc animate-box">
+					<h2><strong>Contact</strong> Us</h2>
+					<span><a class="btn btn-primary btn-lg" href="{% url 'form' %}">Donate Now</a></span>
+				</div>
+			</div>
+
+		</div>
+		
+		<div id="fh5co-contact" class="animate-box">
+			<div class="container">
+				<form method="post">
+                    {% csrf_token %}
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="section-title">Our Address</h3>
+							<p>We Creat All types of websites.</p>
+							<ul class="contact-info">
+								<li><i class="icon-location-pin"></i>Model Town, Lahore</li>
+								<li><i class="icon-phone2"></i>+ 923 0604 93989</li>
+								<li><i class="icon-mail"></i><a href="#">abtechsol09@.com</a></li>
+								<li><i class="icon-globe2"></i><a href="#">www.techsol.com</a></li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" name="email" class="form-control" placeholder="Email">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<textarea name="message" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Send Message</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- END fh5co-contact -->
+		<div id="map" class="fh5co-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27219.505525767145!2d74.30641364268217!3d31.484637258394937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904106691c4c7%3A0xfb24ddaf1e7bc6c2!2sModel%20Town%2C%20Lahore%2C%20Punjab!5e0!3m2!1sen!2s!4v1616291923377!5m2!1sen!2s" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+		<!-- END map -->
+
+{% endblock content %}
