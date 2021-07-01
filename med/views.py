@@ -4,6 +4,10 @@ from .models import *
 
 
 def index(request):
+    return render(request,'index.html')
+
+
+def ngo(request):
     return render(request,'ngo.html')
 
 
