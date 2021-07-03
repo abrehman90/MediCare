@@ -60,6 +60,14 @@ input[type=text] {
   border-radius: 3px;
 }
 
+input[type=number] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
 label {
   margin-bottom: 10px;
   display: block;
@@ -133,25 +141,25 @@ span.price {
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Abdul Rehman">
+            <input type="text" id="cname" name="cardname" required placeholder="Abdul Rehman">
             <div class="row">
               <div class="col-50">
                 <label for="ccnum">Credit card number</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <input type="number" id="ccnum" name="cardnumber" oninvalid="this.setCustomValidity('Enter Valid Card Digits')" required max="99999999999999" maxlength="14" placeholder="1111-2222-3333-4444">
               </div>
               <div class="col-50">
                 <label for="expmonth">Exp Month</label>
-                <input type="text" id="expmonth" name="month" placeholder="06">
+                <input type="number" id="expmonth" name="month" required maxlength="2" oninvalid="this.setCustomValidity('Enter Valid Card Exp Month')" max="31" placeholder="06">
               </div>
             </div>
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="year" placeholder="2018">
+                <input type="number" id="expyear" name="year" required maxlength="4" placeholder="2018">
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="civ" placeholder="352">
+                <input type="number" id="cvv" name="civ" required max="999" oninvalid="this.setCustomValidity('Enter Valid Card CVV Number')" maxlength="3" placeholder="352">
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ from .models import *
 # Register your models here.
 
 
-admin.site.register(Addres)
+admin.site.register(Buy)
+admin.site.register(NGO)
 admin.site.register(Contact)
 admin.site.register(CardDetail)
